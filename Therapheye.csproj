@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props" Condition="Exists('packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0521A972-1CF8-41D4-9299-DF73476B1A9D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Therapheye</RootNamespace>
+    <AssemblyName>Therapheye</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo 1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Therapheye.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Forms.5.0.0.2196\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Forms.5.0.0.2196\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Forms.5.0.0.2196\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlAcercarAlejar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlAcercarAlejar.Designer.cs">
+      <DependentUpon>ControlAcercarAlejar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAlternar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlAlternar.Designer.cs">
+      <DependentUpon>ControlAlternar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAmsler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlAmsler.Designer.cs">
+      <DependentUpon>ControlAmsler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlCirculo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlCirculo.Designer.cs">
+      <DependentUpon>ControlCirculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlCirculoHorario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlCirculoHorario.Designer.cs">
+      <DependentUpon>ControlCirculoHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlEjercicios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlEjercicios.Designer.cs">
+      <DependentUpon>ControlEjercicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlEnfoqueDistancia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlEnfoqueDistancia.Designer.cs">
+      <DependentUpon>ControlEnfoqueDistancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlGreenwood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlGreenwood.Designer.cs">
+      <DependentUpon>ControlGreenwood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlInfinitocs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlInfinitocs.Designer.cs">
+      <DependentUpon>ControlInfinitocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlInicio.Designer.cs">
+      <DependentUpon>ControlInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlIshihara.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlIshihara.Designer.cs">
+      <DependentUpon>ControlIshihara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMasajeCuenca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMasajeCuenca.Designer.cs">
+      <DependentUpon>ControlMasajeCuenca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMasajeFrontal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMasajeFrontal.Designer.cs">
+      <DependentUpon>ControlMasajeFrontal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMasajeGlobo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMasajeGlobo.Designer.cs">
+      <DependentUpon>ControlMasajeGlobo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMasajeSuperior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMasajeSuperior.Designer.cs">
+      <DependentUpon>ControlMasajeSuperior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMiopia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMiopia.Designer.cs">
+      <DependentUpon>ControlMiopia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlMultiVista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlMultiVista.Designer.cs">
+      <DependentUpon>ControlMultiVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPelli.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlPelli.Designer.cs">
+      <DependentUpon>ControlPelli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPresionCuenca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlPresionCuenca.Designer.cs">
+      <DependentUpon>ControlPresionCuenca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPresionMano.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlPresionMano.Designer.cs">
+      <DependentUpon>ControlPresionMano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPresionSimple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlPresionSimple.Designer.cs">
+      <DependentUpon>ControlPresionSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlRectangulo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlRectangulo.Designer.cs">
+      <DependentUpon>ControlRectangulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTestFinal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlTestFinal.Designer.cs">
+      <DependentUpon>ControlTestFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTestInicial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlTestInicial.Designer.cs">
+      <DependentUpon>ControlTestInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cuestion.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCirculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCirculo.Designer.cs">
+      <DependentUpon>FormCirculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEnfoqueDistancia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnfoqueDistancia.Designer.cs">
+      <DependentUpon>FormEnfoqueDistancia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFocus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFocus.Designer.cs">
+      <DependentUpon>FormFocus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHabitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHabitos.Designer.cs">
+      <DependentUpon>FormHabitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfinito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfinito.Designer.cs">
+      <DependentUpon>FormInfinito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaterales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaterales.Designer.cs">
+      <DependentUpon>FormLaterales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMov.Designer.cs">
+      <DependentUpon>FormMov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPresion.Designer.cs">
+      <DependentUpon>FormPresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRectagulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRectagulo.Designer.cs">
+      <DependentUpon>FormRectagulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuplementos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuplementos.Designer.cs">
+      <DependentUpon>FormSuplementos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTestGreenwood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTestGreenwood.Designer.cs">
+      <DependentUpon>FormTestGreenwood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpDown.Designer.cs">
+      <DependentUpon>FormUpDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisNoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisNoc.Designer.cs">
+      <DependentUpon>FormVisNoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlAcercarAlejar.resx">
+      <DependentUpon>ControlAcercarAlejar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlAlternar.resx">
+      <DependentUpon>ControlAlternar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlAmsler.resx">
+      <DependentUpon>ControlAmsler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlCirculo.resx">
+      <DependentUpon>ControlCirculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlCirculoHorario.resx">
+      <DependentUpon>ControlCirculoHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlEjercicios.resx">
+      <DependentUpon>ControlEjercicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlEnfoqueDistancia.resx">
+      <DependentUpon>ControlEnfoqueDistancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlGreenwood.resx">
+      <DependentUpon>ControlGreenwood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlInfinitocs.resx">
+      <DependentUpon>ControlInfinitocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlInicio.resx">
+      <DependentUpon>ControlInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlIshihara.resx">
+      <DependentUpon>ControlIshihara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMasajeCuenca.resx">
+      <DependentUpon>ControlMasajeCuenca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMasajeFrontal.resx">
+      <DependentUpon>ControlMasajeFrontal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMasajeGlobo.resx">
+      <DependentUpon>ControlMasajeGlobo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMasajeSuperior.resx">
+      <DependentUpon>ControlMasajeSuperior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMiopia.resx">
+      <DependentUpon>ControlMiopia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlMultiVista.resx">
+      <DependentUpon>ControlMultiVista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPelli.resx">
+      <DependentUpon>ControlPelli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPresionCuenca.resx">
+      <DependentUpon>ControlPresionCuenca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPresionMano.resx">
+      <DependentUpon>ControlPresionMano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPresionSimple.resx">
+      <DependentUpon>ControlPresionSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlRectangulo.resx">
+      <DependentUpon>ControlRectangulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlTestFinal.resx">
+      <DependentUpon>ControlTestFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlTestInicial.resx">
+      <DependentUpon>ControlTestInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCirculo.resx">
+      <DependentUpon>FormCirculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEnfoqueDistancia.resx">
+      <DependentUpon>FormEnfoqueDistancia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFocus.resx">
+      <DependentUpon>FormFocus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHabitos.resx">
+      <DependentUpon>FormHabitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfinito.resx">
+      <DependentUpon>FormInfinito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLaterales.resx">
+      <DependentUpon>FormLaterales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMov.resx">
+      <DependentUpon>FormMov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPresion.resx">
+      <DependentUpon>FormPresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRectagulo.resx">
+      <DependentUpon>FormRectagulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuplementos.resx">
+      <DependentUpon>FormSuplementos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTestGreenwood.resx">
+      <DependentUpon>FormTestGreenwood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpDown.resx">
+      <DependentUpon>FormUpDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisNoc.resx">
+      <DependentUpon>FormVisNoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinguino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presionCuenca.jpg" />
+    <None Include="Resources\presionMano.jpg" />
+    <None Include="Resources\Zn.png" />
+    <None Include="Resources\test.jpg" />
+    <None Include="Resources\test-visual-ojos-twitter-SF-1.jpg" />
+    <None Include="Resources\pelli-robson-cs-chart-330x430.jfif" />
+    <None Include="Resources\outline_check_circle_outline_white_24dp.png" />
+    <None Include="Resources\outline_remove_red_eye_white_24dp1.png" />
+    <None Include="Resources\outline_remove_red_eye_white_24dp.png" />
+    <None Include="Resources\outline_flag_white_24dp.png" />
+    <None Include="Resources\outline_close_white_24dp.png" />
+    <None Include="Resources\Logo 1.png" />
+    <None Include="Resources\Logo 2.png" />
+    <None Include="Resources\Categorias %284%29.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\13.png" />
+    <None Include="Resources\14.png" />
+    <None Include="Resources\15.png" />
+    <None Include="Resources\16.png" />
+    <None Include="Resources\17.png" />
+    <None Include="Resources\18.png" />
+    <None Include="Resources\181.png" />
+    <None Include="Resources\19.png" />
+    <None Include="Resources\24.png" />
+    <None Include="Resources\Categorias.png" />
+    <None Include="Resources\Categorias %281%29.png" />
+    <None Include="Resources\greenwoodTest.jpg" />
+    <None Include="Resources\28.png" />
+    <None Include="Resources\29.png" />
+    <None Include="Resources\30.png" />
+    <None Include="Resources\31.png" />
+    <None Include="Resources\FondoGris.png" />
+    <None Include="Resources\FondoGris1.png" />
+    <None Include="Resources\32.png" />
+    <None Include="Resources\33.png" />
+    <None Include="Resources\Categorias1.png" />
+    <None Include="Resources\Categorias %281%291.png" />
+    <None Include="Resources\Categorias %283%29.png" />
+    <None Include="Resources\Categorias %282%29.png" />
+    <None Include="Resources\Categorias %282%291.png" />
+    <None Include="Resources\Categorias %283%291.png" />
+    <None Include="Resources\37.png" />
+    <None Include="Resources\38.png" />
+    <None Include="Resources\ArribaAbajo1.png" />
+    <None Include="Resources\Circulos1.png" />
+    <None Include="Resources\Dedo1.png" />
+    <None Include="Resources\Diagonal1.png" />
+    <None Include="Resources\Lados1.png" />
+    <None Include="Resources\A.png" />
+    <None Include="Resources\Acidos grasos.png" />
+    <None Include="Resources\C.png" />
+    <None Include="Resources\E.png" />
+    <None Include="Resources\Luteina.png" />
+    <None Include="Resources\Categorias %284%291.png" />
+    <None Include="Resources\59.png" />
+    <Content Include="Logo 1.ico" />
+    <Content Include="Resources\doorbell2-6450.wav" />
+    <None Include="Resources\infinito.png" />
+    <None Include="Resources\enfoquePulgar.png" />
+    <None Include="Resources\enfoquemesa.png" />
+    <None Include="Resources\enfoqueCajon.png" />
+    <None Include="Resources\flecha2.png" />
+    <None Include="Resources\filtro.png" />
+    <Content Include="Resources\outline_home_white_24dp.png" />
+    <None Include="Resources\outline_info_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets')" />
+</Project>

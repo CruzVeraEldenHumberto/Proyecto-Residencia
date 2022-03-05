@@ -1,0 +1,13 @@
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\bin\Debug\Therapheye.exe.config
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\bin\Debug\Therapheye.exe
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\bin\Debug\Therapheye.pdb
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.ControlTestInicial.resources
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.Inicio.resources
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.Properties.Resources.resources
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.csproj.GenerateResource.cache
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.csproj.CoreCompileInputs.cache
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.exe
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.pdb
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.ControlInicio.resources
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.ControlEjercicios.resources
+C:\Users\Gena4\source\repos\Therapheye\Therapheye\obj\Debug\Therapheye.ControlTestFinal.resources
