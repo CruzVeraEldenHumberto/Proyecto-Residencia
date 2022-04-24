@@ -489,3 +489,12 @@ C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.
 C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.csproj.CopyComplete
 C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.exe
 C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.pdb
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\EntityFramework.dll
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\System.Data.SQLite.dll
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\EntityFramework.xml
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\System.Data.SQLite.xml
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.FormProgreso.resources

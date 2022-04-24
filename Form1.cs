@@ -232,6 +232,12 @@ namespace Therapheye
         {
             System.Diagnostics.Process.Start("https://support.microsoft.com/es-es/windows/configura-la-pantalla-para-la-noche-en-windows-18fe903a-e0a1-8326-4c68-fd23d7aaf136#Category=Windows_10");
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FormProgreso fp = new FormProgreso();
+            fp.ShowDialog();
+        }
     }
    
 }

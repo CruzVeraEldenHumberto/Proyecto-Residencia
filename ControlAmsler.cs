@@ -19,8 +19,17 @@ namespace Therapheye
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox6.Visible = true;
-            
+            if (button2.Text == "Detener")
+            {
+                button2.Text = "Iniciar";
+            }
+            else
+            {
+                pictureBox6.Visible = true;
+                button2.Text = "Detener";
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

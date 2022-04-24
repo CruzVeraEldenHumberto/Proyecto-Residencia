@@ -31,6 +31,8 @@ namespace Therapheye
         private void ControlRectangulo_Load(object sender, EventArgs e)
         {
             pictureBox6.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\rectangulo.gif");
+            //
+            //@"C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia-master\Resources\rectangulo.gif"
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
