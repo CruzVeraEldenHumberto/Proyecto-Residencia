@@ -61,9 +61,7 @@ namespace Therapheye
                 cambio = "No";
             }
 
-
-            DBValue idval = new DBValue();
-            IDUser = idval.IDValue(1);
+            IDUser = DBValue.valID;
             tipoEjercicio = "Masaje cuenca";
 
             string query = "INSERT INTO Ejercicio_Presion ('Id_Usuario', Tipo_Ejercicio, 'Fecha_Hora', 'Tiempo_Ejercicio', 'Cambio') VALUES (@IDU, @Tipo, @Timestamp, @TiempoE, @Cambio)";

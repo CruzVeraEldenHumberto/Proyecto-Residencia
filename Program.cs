@@ -16,7 +16,28 @@ namespace Therapheye
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Login loginForm = new Login();
+            Application.Run(loginForm);
+
+            //if (loginForm.UserRegister)
+            //{
+            //    // MainForm is defined elsewhere
+            //    Application.Run(new FormRegistro());
+            //}
+
+            //if (loginForm.UserLogin)
+            //{
+            //    // MainForm is defined elsewhere
+            //    Application.Run(new Login());
+            //}
+
+
+
+            if (loginForm.UserSuccessfullyAuthenticated)
+            {
+                // MainForm is defined elsewhere
+                Application.Run(new Inicio());
+            }
         }
     }
 }

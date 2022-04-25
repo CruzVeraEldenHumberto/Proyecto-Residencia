@@ -151,8 +151,7 @@ namespace Therapheye
 
         public void InsertRespuestas()
         {
-            DBValue idval = new DBValue();
-            IDUser = idval.IDValue(1);
+            IDUser = DBValue.valID;
 
             string query = "INSERT INTO Ejercicio_Contraste_Sensibilidad ('Id_Usuario', 'Fecha_Hora', 'Primer_Respuesta', 'Segunda_Respuesta', 'Tercer_Respuesta', 'Cuarta_Respuesta', 'Quinta_Respuesta', 'Sexta_Respuesta', 'Septima_Respuesta', 'Octava_Respuesta') VALUES (@IDU, @Timestamp, @R1, @R2, @R3, @R4, @R5, @R6, @R7, @R8)";
             SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);

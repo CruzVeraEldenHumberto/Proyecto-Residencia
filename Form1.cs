@@ -100,6 +100,9 @@ namespace Therapheye
             button4.BackColor = Color.FromArgb(99, 117, 237);
             button4.ForeColor = Color.Black;
             MessageBox.Show("Therapeye: Evaluación y recomendaciones para la fatiga visual y vision escotópica", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Login fi = new Login();
+            fi.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)

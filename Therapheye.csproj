@@ -310,6 +310,12 @@
     <Compile Include="FormRectagulo.Designer.cs">
       <DependentUpon>FormRectagulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistro.Designer.cs">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuplementos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,12 @@
     </Compile>
     <Compile Include="FormVisNoc.Designer.cs">
       <DependentUpon>FormVisNoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -441,6 +453,9 @@
     <EmbeddedResource Include="FormRectagulo.resx">
       <DependentUpon>FormRectagulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistro.resx">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSuplementos.resx">
       <DependentUpon>FormSuplementos.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVisNoc.resx">
       <DependentUpon>FormVisNoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
