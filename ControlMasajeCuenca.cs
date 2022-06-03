@@ -46,14 +46,15 @@ namespace Therapheye
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tiempo = reloj.Elapsed.ToString();
-            reloj.Reset();
+            TimeSpan ts = reloj.Elapsed; //obtiene el tiempo transcurrido del cronometro
+            tiempo = String.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10); //formatea el valor del cronometro
+            //tiempo = reloj.Elapsed.ToString();
+            reloj.Reset(); //detiene el cronometro y restablece su valor original
 
-            //MessageBox.Show(tiempo);
-
+            //despliega un MessageBox que tiene 2 botones de decisión
             if (MessageBox.Show("¿Siente algún cambio en su vista?", "Test", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // user clicked yes
+                
                 cambio = "Sí";
             }
             else

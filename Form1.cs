@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Data.SQLite;
 
 namespace Therapheye
 {
@@ -24,7 +25,10 @@ namespace Therapheye
           int nWidthEllipse, // height of ellipse
           int nHeightEllipse // width of ellipse
       );
-
+        Database databaseobject = new Database();
+        DBValue dbval = new DBValue();
+        public string aux;
+        public int idVal;
         public Inicio()
         {
             InitializeComponent();
@@ -33,6 +37,9 @@ namespace Therapheye
             controlInicio2.BringToFront();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
+            idVal = DBValue.valID;
+            aux = idVal.ToString();
+            ValidarCuestionario();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -240,6 +247,33 @@ namespace Therapheye
         {
             FormProgreso fp = new FormProgreso();
             fp.ShowDialog();
+        }
+
+        public void ValidarCuestionario()
+        {
+            databaseobject.OpenConnection(); //se abre una conexion a la base de datos
+            string CommandText = "SELECT * FROM Cuestionario_Inicial WHERE ID_Usuario='" + aux + "'";
+
+            //se ejecuta la consulta anterior
+            SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+            SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
+
+            if (sqReader.Read()) //mientras se lean los datos
+            {
+                //si se encuentra un usuario existente, se asiga el valor de su id a la variable
+                button5.Enabled = true;
+                button6.Enabled = true;
+                button7.Enabled = true;
+            }
+
+            else
+            {
+                sqReader.Close();
+                button5.Enabled = false;
+                button6.Enabled = false;
+                button7.Enabled = false;
+            }
+            databaseobject.CloseConnection();
         }
     }
    

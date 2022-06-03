@@ -6,24 +6,14 @@ using System.Threading.Tasks;
 
 namespace Therapheye
 {
-    public class DBValue
+    public class DBValue //clase que ayuda en la obtención y utilización del id del usuario actual de la base de datos
     {
-        public static int valID;
-        public int idValor;
-        public int IDValue(int idvalue)
-        {
-            return idvalue;
-        }
+        public static int valID; //variable entera estatica valID
 
-        public void Asignar(int val)
+        public void Asignar(int val) //metodo para asignar el valor recibido a la variable estatica
         {
-            idValor = val;
             valID = val;
         }
 
-        public int retValor()
-        {
-            return idValor;
-        }
     }
 }

@@ -13,18 +13,23 @@ namespace Therapheye
 {
     public partial class ControlIshihara : UserControl
     {
-        public string Resp1;
-        public string Resp2;
-        public string Resp3;
-        public string Resp4;
-        public string Resp5;
-        public string Resp6;
-        public string Resp7;
-        public string Resp8;
+        //public string Resp1;
+        //public string Resp2;
+        //public string Resp3;
+        //public string Resp4;
+        //public string Resp5;
+        //public string Resp6;
+        //public string Resp7;
+        //public string Resp8;
         public string DTNow;
+        public string Nota;
         public int IDUser; //id del usuario
         public string Datetime; //variable datetime para obtener fecha actual
         Database databaseobject = new Database();
+        public int ContCorrecta=0;
+        public int ContIncorrecto=0;
+        //public double Porcentaje;
+        public string Resultado;
 
         public ControlIshihara()
         {
@@ -44,43 +49,105 @@ namespace Therapheye
         private void button3_Click(object sender, EventArgs e)
         {
             pictureBox1.BringToFront();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\11.png");
             pictureBox1.Visible = true;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            pictureBox5.BringToFront();
-            pictureBox5.Visible = true;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            pictureBox6.BringToFront();
-            pictureBox6.Visible = true;
+            pictureBox2.BringToFront();
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\12.png");
+            pictureBox2.Visible = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             pictureBox3.BringToFront();
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\13.png");
             pictureBox3.Visible = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             pictureBox4.BringToFront();
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\14.png");
             pictureBox4.Visible = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
+        {
+            pictureBox5.BringToFront();
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\15.png");
+            pictureBox5.Visible = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            pictureBox6.BringToFront();
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\16.png");
+            pictureBox6.Visible = true;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            pictureBox1.BringToFront();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\Ishihara_07.jpg");
+            pictureBox1.Visible = true;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
         {
             pictureBox2.BringToFront();
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\Ishihara_08.jpg");
             pictureBox2.Visible = true;
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            pictureBox3.BringToFront();
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\Ishihara_09.jpg");
+            pictureBox3.Visible = true;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            pictureBox4.BringToFront();
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\Ishihara_10.jpg");
+            pictureBox4.Visible = true;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            pictureBox5.BringToFront();
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\Ishihara_11.jpg");
+            pictureBox5.Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            pictureBox6.BringToFront();
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\Ishihara_12.jpg");
+            pictureBox6.Visible = true;
+        }
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -92,79 +159,146 @@ namespace Therapheye
             if (textBox2.Text == "12")
             {
                 textBox2.BackColor = Color.Green;
-                Resp1 = Correct();
+                Correct();
             }
             else
             {
                 textBox2.BackColor = Color.Red;
-                Resp1 = Incorrect();
+                Incorrect();
             }
 
             if (textBox3.Text == "74")
             {
                 textBox3.BackColor = Color.Green;
-                Resp2 = Correct();
+                Correct();
             }
             else
             {
                 textBox3.BackColor = Color.Red;
-                Resp2 = Incorrect();
+                Incorrect();
             }
 
             if (textBox4.Text == "6")
             {
                 textBox4.BackColor = Color.Green;
-                Resp3 = Correct();
+                Correct();
             }
             else
             {
                 textBox4.BackColor = Color.Red;
-                Resp3 = Incorrect();
+                Incorrect();
             }
 
             if (textBox5.Text == "16")
             {
                 textBox5.BackColor = Color.Green;
-                Resp4 = Correct();
+                Correct();
             }
             else
             {
                 textBox5.BackColor = Color.Red;
-                Resp4 = Incorrect();
+                Incorrect();
             }
 
             if (textBox6.Text == "2")
             {
                 textBox6.BackColor = Color.Green;
-                Resp5 = Correct();
+                Correct();
             }
             else
             {
                 textBox6.BackColor = Color.Red;
-                Resp5 = Incorrect();
+                Incorrect();
             }
 
             if (textBox7.Text == "29")
             {
                 textBox7.BackColor = Color.Green;
-                Resp6 = Correct();
+                Correct();
             }
             else
             {
                 textBox7.BackColor = Color.Red;
-                Resp6 = Incorrect();
+                Incorrect();
             }
 
-            if (textBox2.BackColor == Color.Green &&
-                textBox3.BackColor == Color.Green &&
-                textBox4.BackColor == Color.Green &&
-                textBox5.BackColor == Color.Green &&
-                textBox6.BackColor == Color.Green &&
-                textBox7.BackColor == Color.Green) 
+            if (textBox13.Text == "45")
             {
-                MessageBox.Show("Ha concluido el test de Ishihara satisfactoriamente", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textBox13.BackColor = Color.Green;
+                Correct();
+            }
+            else
+            {
+                textBox13.BackColor = Color.Red;
+                Incorrect();
             }
 
+            if (textBox12.Text == "5")
+            {
+                textBox12.BackColor = Color.Green;
+                Correct();
+            }
+            else
+            {
+                textBox12.BackColor = Color.Red;
+                Incorrect();
+            }
+
+            if (textBox11.Text == "97")
+            {
+                textBox11.BackColor = Color.Green;
+                Correct();
+            }
+            else
+            {
+                textBox11.BackColor = Color.Red;
+                Incorrect();
+            }
+
+            if (textBox10.Text == "8")
+            {
+                textBox10.BackColor = Color.Green;
+                Correct();
+            }
+            else
+            {
+                textBox10.BackColor = Color.Red;
+                Incorrect();
+            }
+
+            if (textBox9.Text == "42")
+            {
+                textBox9.BackColor = Color.Green;
+                Correct();
+            }
+            else
+            {
+                textBox9.BackColor = Color.Red;
+                Incorrect();
+            }
+
+            if (textBox8.Text == "3")
+            {
+                textBox8.BackColor = Color.Green;
+                Correct();
+            }
+            else
+            {
+                textBox8.BackColor = Color.Red;
+                Incorrect();
+            }
+
+            Resultado = ContCorrecta + "/12";
+            if(ContCorrecta >= 10)
+            {
+                MessageBox.Show("Ha concluido el test de Ishihara satisfactoriamente. " + Resultado,"Resultados", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Nota = "Visión de color normal";
+            }
+            else
+            {
+                MessageBox.Show("Existe la posibilidad de que tenga deficiencia de color visual. " + Resultado, "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Nota = "Deficiencia de color visual";
+            }
             InsertRespuestas();
         }
 
@@ -251,38 +385,76 @@ namespace Therapheye
             textBox3.BackColor = Color.White;
         }
 
-        public void InsertRespuestas()
+        public void InsertRespuestas() //metodo para insertar datos acerca del ejercicio
         {
-            IDUser = DBValue.valID;
+            IDUser = DBValue.valID; //Obtiene el ID del usuario actual
 
-            string query = "INSERT INTO Ejercicio_Vision_Color ('Id_Usuario', 'Fecha_Hora', 'Primer_Respuesta', 'Segunda_Respuesta', 'Tercer_Respuesta', 'Cuarta_Respuesta', 'Quinta_Respuesta', 'Sexta_Respuesta') VALUES (@IDU, @Timestamp, @R1, @R2, @R3, @R4, @R5, @R6)";
+            //cadena la cual es un comando de sql para insertar datos dentro de la tabla Ejercicio_Vision_Color
+            string query = "INSERT INTO Ejercicio_Vision_Color ('Id_Usuario', 'Fecha_Hora', 'Porcentaje_Aciertos', 'Nota') VALUES (@IDU, @Timestamp, @Re, @Nt)";
+            //se crea un commando SQL en base a la cadena anterior
             SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
 
-            databaseobject.OpenConnection();
+            databaseobject.OpenConnection(); //se abre la conexión de la base de datos
 
-            DTNow = databaseobject.GetDateTime();
+            DTNow = databaseobject.GetDateTime(); //se obtiene la fecha actual
 
+            //se añaden los parametros con los valores establecidos
             mycommand.Parameters.AddWithValue("@IDU", IDUser);
             mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
-            mycommand.Parameters.AddWithValue("@R1", Resp1);
-            mycommand.Parameters.AddWithValue("@R2", Resp2);
-            mycommand.Parameters.AddWithValue("@R3", Resp3);
-            mycommand.Parameters.AddWithValue("@R4", Resp4);
-            mycommand.Parameters.AddWithValue("@R5", Resp5);
-            mycommand.Parameters.AddWithValue("@R6", Resp6);
+            mycommand.Parameters.AddWithValue("@Re", Resultado);
+            mycommand.Parameters.AddWithValue("@Nt", Nota);
 
-            mycommand.ExecuteNonQuery();
+            mycommand.ExecuteNonQuery(); //ejecuta el comando SQL
+            //restablece los valores 
+            ContCorrecta = 0;
+            ContIncorrecto = 0;
 
+            databaseobject.CloseConnection(); //cierra la conexión de la base de datos
         }
 
-        public string Correct()
+        //public void InsertRespuestas()
+        //{
+        //    IDUser = DBValue.valID;
+
+        //    string query = "INSERT INTO Ejercicio_Vision_Color ('Id_Usuario', 'Fecha_Hora', 'Primer_Respuesta', 'Segunda_Respuesta', 'Tercer_Respuesta', 'Cuarta_Respuesta', 'Quinta_Respuesta', 'Sexta_Respuesta') VALUES (@IDU, @Timestamp, @R1, @R2, @R3, @R4, @R5, @R6)";
+        //    SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
+
+        //    databaseobject.OpenConnection();
+
+        //    DTNow = databaseobject.GetDateTime();
+
+        //    mycommand.Parameters.AddWithValue("@IDU", IDUser);
+        //    mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
+        //    mycommand.Parameters.AddWithValue("@R1", Resp1);
+        //    mycommand.Parameters.AddWithValue("@R2", Resp2);
+        //    mycommand.Parameters.AddWithValue("@R3", Resp3);
+        //    mycommand.Parameters.AddWithValue("@R4", Resp4);
+        //    mycommand.Parameters.AddWithValue("@R5", Resp5);
+        //    mycommand.Parameters.AddWithValue("@R6", Resp6);
+
+        //    mycommand.ExecuteNonQuery();
+        //}
+
+        public void Correct()
         {
-            return "Correcta";
+            ContCorrecta = ContCorrecta + 1;
         }
 
-        public string Incorrect()
+        public void Incorrect()
         {
-            return "Incorrecta";
+            ContIncorrecto = ContIncorrecto + 1;
         }
+
+
+
+        //public string Correct()
+        //{
+        //    return "Correcta";
+        //}
+
+        //public string Incorrect()
+        //{
+        //    return "Incorrecta";
+        //}
     }
 }

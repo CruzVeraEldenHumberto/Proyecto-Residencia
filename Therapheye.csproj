@@ -286,6 +286,12 @@
     <Compile Include="FormLaterales.Designer.cs">
       <DependentUpon>FormLaterales.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMensaje.Designer.cs">
+      <DependentUpon>FormMensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMov.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLaterales.resx">
       <DependentUpon>FormLaterales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMensaje.resx">
+      <DependentUpon>FormMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMov.resx">
       <DependentUpon>FormMov.cs</DependentUpon>

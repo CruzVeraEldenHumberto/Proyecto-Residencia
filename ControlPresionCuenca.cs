@@ -72,7 +72,10 @@ namespace Therapheye
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tiempo = reloj.Elapsed.ToString();
+            TimeSpan ts = reloj.Elapsed;
+            tiempo = String.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+            //tiempo = reloj.Elapsed.ToString();
+
             reloj.Reset();
 
             //MessageBox.Show(tiempo);

@@ -13,12 +13,11 @@ namespace Therapheye
 {
     public partial class Login : Form
     {
-        public int idVal;
-        Database databaseobject = new Database();
-        DBValue dbval = new DBValue();
-        public int aux;
-        public string Prueba;
-        public bool UserSuccessfullyAuthenticated { get; private set; }
+        public int idVal; //ID del usuario que intenta iniciar sesión
+        Database databaseobject = new Database(); //se crea un objeto de la base de datos
+        DBValue dbval = new DBValue(); //crea un objeto de la clase DBValue
+        public string Prueba; //variable string del ID del usuario que intenta iniciar sesion
+        public bool UserSuccessfullyAuthenticated { get; private set; } //variable booleana para especificar si se autentico el inicio de sesión
 
         public Login()
         {
@@ -48,16 +47,17 @@ namespace Therapheye
                 {
                     //si se encuentra un usuario existente, se asiga el valor de su id a la variable
                     Prueba = sqReader["ID"].ToString();
-                    idVal = int.Parse(Prueba);
-                    dbval.Asignar(idVal);
+                    idVal = int.Parse(Prueba); //convierte la cadena en un entero y se le asigna el valor a la variable idVal
+                    dbval.Asignar(idVal); //manda a llamar el metodo asignar con el parametro idVal
                     sqReader.Close(); //cierra el sqldatareader
-                    UserSuccessfullyAuthenticated = true;
+                    UserSuccessfullyAuthenticated = true; //el valor es verdadero ya que se pudo autenticar el usuario
+                    databaseobject.CloseConnection(); //cierra la conexión de la base de datos
                     this.Close();//cierra el formulario actual               
                 }
 
                 else
                 {
-                    sqReader.Close();
+                    sqReader.Close(); //cierra el lector de datos
                     MessageBox.Show("No existe una cuenta con los datos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
@@ -78,6 +78,45 @@ namespace Therapheye
         {
             FormRegistro fr = new FormRegistro();
             fr.ShowDialog();
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "Nombre")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Nombre";
+                textBox1.ForeColor = Color.Silver;
+            }
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Contraseña")
+            {
+                textBox2.Text = "";
+                textBox2.PasswordChar = '*';
+                textBox2.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.PasswordChar = '\0';
+                textBox2.Text = "Contraseña";
+                textBox2.ForeColor = Color.Silver;
+            }
         }
     }
 }

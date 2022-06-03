@@ -50,11 +50,10 @@ namespace Therapheye
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
             this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(36, 64);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Location = new System.Drawing.Point(27, 52);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(419, 366);
+            this.richTextBox1.Size = new System.Drawing.Size(350, 298);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -62,10 +61,9 @@ namespace Therapheye
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(36, 18);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(27, 15);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(912, 37);
+            this.textBox1.Size = new System.Drawing.Size(791, 31);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Cartilla de Sensibilidad de Contraste de Pelli-Robson";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -75,10 +73,9 @@ namespace Therapheye
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(255, 438);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(205, 356);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 37);
+            this.button1.Size = new System.Drawing.Size(170, 30);
             this.button1.TabIndex = 3;
             this.button1.Text = "Comprobar";
             this.button1.UseVisualStyleBackColor = false;
@@ -89,10 +86,9 @@ namespace Therapheye
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(36, 438);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(27, 356);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(211, 37);
+            this.button2.Size = new System.Drawing.Size(172, 30);
             this.button2.TabIndex = 4;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = false;
@@ -101,10 +97,9 @@ namespace Therapheye
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(803, 86);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(637, 70);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 32);
+            this.textBox2.Size = new System.Drawing.Size(181, 27);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
@@ -113,20 +108,18 @@ namespace Therapheye
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(803, 133);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Location = new System.Drawing.Point(637, 108);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(189, 32);
+            this.textBox3.Size = new System.Drawing.Size(181, 27);
             this.textBox3.TabIndex = 6;
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(803, 181);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Location = new System.Drawing.Point(637, 147);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(189, 32);
+            this.textBox4.Size = new System.Drawing.Size(181, 27);
             this.textBox4.TabIndex = 7;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
@@ -134,50 +127,45 @@ namespace Therapheye
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(803, 230);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox5.Location = new System.Drawing.Point(637, 187);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(189, 32);
+            this.textBox5.Size = new System.Drawing.Size(181, 27);
             this.textBox5.TabIndex = 8;
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(803, 277);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Location = new System.Drawing.Point(637, 225);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(189, 32);
+            this.textBox6.Size = new System.Drawing.Size(181, 27);
             this.textBox6.TabIndex = 9;
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
             // 
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(803, 326);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Location = new System.Drawing.Point(637, 265);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(189, 32);
+            this.textBox7.Size = new System.Drawing.Size(181, 27);
             this.textBox7.TabIndex = 10;
             this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
             // 
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(803, 374);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox8.Location = new System.Drawing.Point(637, 304);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(189, 32);
+            this.textBox8.Size = new System.Drawing.Size(181, 27);
             this.textBox8.TabIndex = 11;
             this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
             // 
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(803, 425);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox9.Location = new System.Drawing.Point(637, 345);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(189, 32);
+            this.textBox9.Size = new System.Drawing.Size(181, 27);
             this.textBox9.TabIndex = 12;
             this.textBox9.Enter += new System.EventHandler(this.textBox9_Enter);
             // 
@@ -186,17 +174,16 @@ namespace Therapheye
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::Therapheye.Properties.Resources.pelli_robson_cs_chart_330x430;
-            this.pictureBox1.Location = new System.Drawing.Point(464, 63);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(383, 51);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(351, 420);
+            this.pictureBox1.Size = new System.Drawing.Size(264, 342);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // ControlPelli
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
@@ -213,9 +200,8 @@ namespace Therapheye
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ControlPelli";
-            this.Size = new System.Drawing.Size(997, 487);
+            this.Size = new System.Drawing.Size(852, 396);
             this.Load += new System.EventHandler(this.ControlPelli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
