@@ -500,3 +500,4 @@ C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\bin\Debug\System.Data
 C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.FormProgreso.resources
 C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.Login.resources
 C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.FormRegistro.resources
+C:\Users\PCSKURADAS\Desktop\Residencia\Proyecto-Residencia\obj\Debug\Therapheye.FormMensaje.resources

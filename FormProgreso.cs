@@ -93,7 +93,7 @@ namespace Therapheye
             SidePanel.Height = button3.Height;
             SidePanel.Top = button3.Top;
             databaseobject.OpenConnection();
-            string CommandText = "SELECT Tipo_Ejercicio, Fecha_Hora,  Tiempo_Ejercicio, Cambio FROM Ejercicio_Presion WHERE Id_Usuario='" + aux + "'";
+            string CommandText = "SELECT Fecha_Hora, Tipo_Ejercicio, Tiempo_Ejercicio, Cambio, Nota FROM Ejercicio_Presion WHERE Id_Usuario='" + aux + "'";
             SQLiteDataAdapter sqlda = new SQLiteDataAdapter(CommandText, databaseobject.myConnection);
             DataTable dt;
 
@@ -102,7 +102,11 @@ namespace Therapheye
                 sqlda.Fill(dt);
                 dataGridView1.DataSource = dt;
             }
-
+            dataGridView1.Columns["Fecha_Hora"].DisplayIndex = 0;
+            dataGridView1.Columns["Tipo_Ejercicio"].DisplayIndex = 1;
+            dataGridView1.Columns["Tiempo_Ejercicio"].DisplayIndex = 2;
+            dataGridView1.Columns["Cambio"].DisplayIndex = 3;
+            dataGridView1.Columns["Nota"].DisplayIndex = 4;
             SetColumnProperties();
             databaseobject.CloseConnection();
         }
@@ -157,7 +161,29 @@ namespace Therapheye
             SidePanel.Top = button4.Top;
 
             databaseobject.OpenConnection(); //se abre la conexion a la base de datos
-            string CommandText = "SELECT Tipo_ejercicio, Fecha_Hora, Cambio FROM Ejercicio_Enfoque_Distancia WHERE Id_Usuario='" + aux + "'";
+            string CommandText = "SELECT Tipo_ejercicio, Fecha_Hora, Cambio, Nota FROM Ejercicio_Enfoque_Distancia WHERE Id_Usuario='" + aux + "'";
+            SQLiteDataAdapter sqlda = new SQLiteDataAdapter(CommandText, databaseobject.myConnection);
+            DataTable dt;
+
+            using (dt = new DataTable())
+            {
+                sqlda.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+
+            SetColumnProperties();
+            databaseobject.CloseConnection();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MostrarPanel();
+            //mueve el sidepanel para especificar que boton esta seleccionado
+            SidePanel.Height = button10.Height;
+            SidePanel.Top = button10.Top;
+
+            databaseobject.OpenConnection(); //se abre la conexion a la base de datos
+            string CommandText = "SELECT Tipo_Ejercicio, Fecha_Hora, Cambio, Nota FROM Ejercicio_Movimiento_Ocular WHERE Id_Usuario='" + aux + "'";
             SQLiteDataAdapter sqlda = new SQLiteDataAdapter(CommandText, databaseobject.myConnection);
             DataTable dt;
 

@@ -19,6 +19,7 @@ namespace Therapheye
         public string cambio;
         public string tipoEjercicio;
         public string DTNow;
+        string Nota;
 
         public ControlAcercarAlejar()
         {
@@ -51,16 +52,24 @@ namespace Therapheye
                 {
                     // user clicked yes
                     cambio = "Sí";
+                    using (FormMensaje formmen = new FormMensaje())
+                    {
+                        if (formmen.ShowDialog() == DialogResult.OK)
+                        {
+                            Nota = formmen.valorMensaje;
+                        }
+                    }
                 }
                 else
                 {
                     cambio = "No";
+                    Nota = "-";
                 }
 
                 IDUser = DBValue.valID;
                 tipoEjercicio = "Acercamiento y alejamiento";
 
-                string query = "INSERT INTO Ejercicio_Enfoque_Distancia ('Id_Usuario', Tipo_Ejercicio, 'Fecha_Hora', 'Cambio') VALUES (@IDU, @Tipo, @Timestamp, @Cambio)";
+                string query = "INSERT INTO Ejercicio_Enfoque_Distancia ('Id_Usuario', Tipo_Ejercicio, 'Fecha_Hora', 'Cambio', 'Nota') VALUES (@IDU, @Tipo, @Timestamp, @Cambio, @Nota)";
                 SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
 
                 databaseobject.OpenConnection();
@@ -71,6 +80,7 @@ namespace Therapheye
                 mycommand.Parameters.AddWithValue("@Tipo", tipoEjercicio);
                 mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
                 mycommand.Parameters.AddWithValue("@Cambio", cambio);
+                mycommand.Parameters.AddWithValue("@Nota", Nota);
 
                 mycommand.ExecuteNonQuery();
 

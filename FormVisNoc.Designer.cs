@@ -65,7 +65,7 @@ namespace Therapheye
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
             this.SidePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SidePanel.Location = new System.Drawing.Point(5, 56);
-            this.SidePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SidePanel.Margin = new System.Windows.Forms.Padding(2);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(8, 52);
             this.SidePanel.TabIndex = 12;
@@ -87,6 +87,7 @@ namespace Therapheye
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(17, 285);
             this.button4.Name = "button4";
@@ -94,6 +95,7 @@ namespace Therapheye
             this.button4.TabIndex = 4;
             this.button4.Text = "Campo Visual";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
@@ -141,7 +143,7 @@ namespace Therapheye
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(209, 177);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(562, 29);
             this.textBox1.TabIndex = 9;
@@ -151,7 +153,7 @@ namespace Therapheye
             // 
             this.controlCirculoHorario1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
             this.controlCirculoHorario1.Location = new System.Drawing.Point(201, 0);
-            this.controlCirculoHorario1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlCirculoHorario1.Margin = new System.Windows.Forms.Padding(2);
             this.controlCirculoHorario1.Name = "controlCirculoHorario1";
             this.controlCirculoHorario1.Size = new System.Drawing.Size(851, 401);
             this.controlCirculoHorario1.TabIndex = 5;
@@ -162,7 +164,7 @@ namespace Therapheye
             // 
             this.controlGreenwood1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
             this.controlGreenwood1.Location = new System.Drawing.Point(201, 0);
-            this.controlGreenwood1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.controlGreenwood1.Margin = new System.Windows.Forms.Padding(4);
             this.controlGreenwood1.Name = "controlGreenwood1";
             this.controlGreenwood1.Size = new System.Drawing.Size(851, 397);
             this.controlGreenwood1.TabIndex = 4;
@@ -172,7 +174,7 @@ namespace Therapheye
             // 
             this.controlAmsler1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
             this.controlAmsler1.Location = new System.Drawing.Point(201, 0);
-            this.controlAmsler1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.controlAmsler1.Margin = new System.Windows.Forms.Padding(4);
             this.controlAmsler1.Name = "controlAmsler1";
             this.controlAmsler1.Size = new System.Drawing.Size(852, 398);
             this.controlAmsler1.TabIndex = 3;
@@ -183,7 +185,7 @@ namespace Therapheye
             // 
             this.controlIshihara1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
             this.controlIshihara1.Location = new System.Drawing.Point(201, 0);
-            this.controlIshihara1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.controlIshihara1.Margin = new System.Windows.Forms.Padding(4);
             this.controlIshihara1.Name = "controlIshihara1";
             this.controlIshihara1.Size = new System.Drawing.Size(850, 395);
             this.controlIshihara1.TabIndex = 2;
@@ -195,7 +197,7 @@ namespace Therapheye
             this.controlPelli1.AutoSize = true;
             this.controlPelli1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
             this.controlPelli1.Location = new System.Drawing.Point(201, 0);
-            this.controlPelli1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.controlPelli1.Margin = new System.Windows.Forms.Padding(4);
             this.controlPelli1.Name = "controlPelli1";
             this.controlPelli1.Size = new System.Drawing.Size(852, 396);
             this.controlPelli1.TabIndex = 1;

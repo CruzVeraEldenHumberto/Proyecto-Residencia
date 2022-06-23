@@ -24,6 +24,7 @@ namespace Therapheye
         public string cambio;
         public string tipoEjercicio;
         public string DTNow;
+        string Nota;
 
         public ControlPresionSimple()
         {
@@ -83,16 +84,24 @@ namespace Therapheye
             {
                 // user clicked yes
                 cambio = "Sí";
+                using (FormMensaje formmen = new FormMensaje())
+                {
+                    if (formmen.ShowDialog() == DialogResult.OK)
+                    {
+                        Nota = formmen.valorMensaje;
+                    }
+                }
             }
             else
             {
                 cambio = "No";
+                Nota = "-";
             }
 
             IDUser = DBValue.valID;
             tipoEjercicio = "Presión Simple";
 
-            string query = "INSERT INTO Ejercicio_Presion ('Id_Usuario', Tipo_Ejercicio, 'Fecha_Hora', 'Tiempo_Ejercicio', 'Cambio') VALUES (@IDU, @Tipo, @Timestamp, @TiempoE, @Cambio)";
+            string query = "INSERT INTO Ejercicio_Presion ('Id_Usuario', Tipo_Ejercicio, 'Fecha_Hora', 'Tiempo_Ejercicio', 'Cambio', 'Nota') VALUES (@IDU, @Tipo, @Timestamp, @TiempoE, @Cambio, @Nota)";
             SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
 
             databaseobject.OpenConnection();
@@ -104,10 +113,9 @@ namespace Therapheye
             mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
             mycommand.Parameters.AddWithValue("@TiempoE", tiempo);
             mycommand.Parameters.AddWithValue("@Cambio", cambio);
+            mycommand.Parameters.AddWithValue("@Nota", Nota);
 
             mycommand.ExecuteNonQuery();
-
-
         }
 
 

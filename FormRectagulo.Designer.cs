@@ -40,7 +40,7 @@ namespace Therapheye
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(17, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1501, 723);
             this.pictureBox1.TabIndex = 2;
@@ -56,7 +56,7 @@ namespace Therapheye
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(202, 54);
             this.button2.TabIndex = 40;
-            this.button2.Text = "Iniciar/Reiniciar";
+            this.button2.Text = "Iniciar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -82,7 +82,7 @@ namespace Therapheye
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRectagulo";

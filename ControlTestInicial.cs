@@ -145,7 +145,7 @@ namespace Therapheye
 
             encuesta.Add(new cuestion
             {
-                concepto = "8.- ¿Tiene deficiencias alimenticias?",
+                concepto = "8.- ¿Presenta con frecuencia alguno de estos: Enrojecimiento, sensación de ardor, picor en los ojos, ¿lagrimeo?",
                 resp1 = "No",
                 valor1 = val1,
                 resp2 = "No estoy segur@",

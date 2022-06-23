@@ -40,10 +40,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.SidePanel);
@@ -111,7 +113,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(177, 51);
             this.button5.TabIndex = 5;
-            this.button5.Text = "Ejercicio de degeneración macular";
+            this.button5.Text = "Ejercicios de integridad ocular";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -207,24 +209,14 @@
             this.panel2.TabIndex = 4;
             this.panel2.Visible = false;
             // 
-            // label1
+            // label2
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(38, 261);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(424, 149);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(1054, 320);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Visible = false;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(38, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(304, 67);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "label2";
             // 
             // button9
             // 
@@ -236,14 +228,37 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Visible = false;
             // 
-            // label2
+            // button8
             // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(38, 147);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(304, 67);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.button8.Location = new System.Drawing.Point(1054, 320);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(38, 261);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(424, 149);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(186)))));
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(17, 368);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(177, 51);
+            this.button10.TabIndex = 14;
+            this.button10.Text = "Ejercicios de movimiento ocular";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // FormProgreso
             // 
@@ -282,5 +297,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button10;
     }
 }

@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Therapheye
 {
     public partial class FormLaterales : Form
     {
+        public int IDUser; //id del usuario
+        public string Datetime; //variable datetime para obtener fecha actual
+        Database databaseobject = new Database();
+        public string cambio;
+        public string tipoEjercicio;
+        public string DTNow;
+        public string Nota;
+
         public FormLaterales()
         {
             InitializeComponent();
+            pictureBox1.Enabled = false; //desactiva el picturebox para no mostrar el gif
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,8 +34,59 @@ namespace Therapheye
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\laterales.gif");
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (pictureBox1.Enabled == true) //si el picturebox esta activado
+            {
+                button2.Text = "Iniciar";
+                pictureBox1.Enabled = false; //desactiva el picturebox para detener el gif
+
+                if (MessageBox.Show("¿Siente algún cambio en su vista?", "Test", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // user clicked yes
+                    cambio = "Sí";
+                    using (FormMensaje formmen = new FormMensaje())
+                    {
+                        if (formmen.ShowDialog() == DialogResult.OK)
+                        {
+                            Nota = formmen.valorMensaje;
+                        }
+                    }
+                }
+                else
+                {
+                    cambio = "No";
+                    Nota = "-";
+                }
+                InsertarDatos();
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile(@"..\..\..\..\Residencia\Proyecto-Residencia\Resources\laterales.gif");
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Enabled = true; //activa el picturebox
+                button2.Text = "Detener";
+            }
+        }
+        public void InsertarDatos()
+        {
+            IDUser = DBValue.valID;
+            tipoEjercicio = "Movimientos multidireccional 2";
+
+            string query = "INSERT INTO Ejercicio_Movimiento_Ocular ('Id_Usuario', Tipo_Ejercicio, 'Fecha_Hora', 'Cambio', 'Nota') VALUES (@IDU, @Tipo, @Timestamp, @Cambio, @Nota)";
+            SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
+
+            databaseobject.OpenConnection();
+
+            DTNow = databaseobject.GetDateTime();
+
+            mycommand.Parameters.AddWithValue("@IDU", IDUser);
+            mycommand.Parameters.AddWithValue("@Tipo", tipoEjercicio);
+            mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
+            mycommand.Parameters.AddWithValue("@Cambio", cambio);
+            mycommand.Parameters.AddWithValue("@Nota", Nota);
+
+            mycommand.ExecuteNonQuery();
+
+            databaseobject.CloseConnection();
         }
     }
 }

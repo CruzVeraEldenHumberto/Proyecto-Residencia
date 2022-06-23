@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Therapheye
 {
@@ -19,9 +20,18 @@ namespace Therapheye
         private int val4 = 15;
         private int numPreg = 0;
         private int sumResp = 0;
+        private int opc = 0;
+        private string resp;
+        public string aux;
+        public int idVal;
+        Database databaseobject = new Database();
+        DBValue dbval = new DBValue();
+        public string DTNow;
         public ControlTestFinal()
         {
             InitializeComponent();
+            idVal = DBValue.valID;
+            aux = idVal.ToString();
         }
 
         private void ControlTestFinal_Load(object sender, EventArgs e)
@@ -131,7 +141,7 @@ namespace Therapheye
 
             encuesta.Add(new cuestion
             {
-                concepto = "8.- ¿Tiene deficiencias alimenticias?",
+                concepto = "8.- ¿Presenta con frecuencia alguno de estos: Enrojecimiento, sensación de ardor, picor en los ojos, ¿lagrimeo?",
                 resp1 = "No",
                 valor1 = val1,
                 resp2 = "No estoy segur@",
@@ -258,27 +268,87 @@ namespace Therapheye
             if (sumResp <= lim2)
             {
                 richTextBox1.Text = "De acuerdo a las respuestas que ha proporcionado, sus hábitos y salud ocular son adecuados, por lo que probablemente no tenga complicaciones visuales. Sin embargo las pruebas están a su disposición si así lo desea. Igualmente puede acceder al resto de los módulos para conocer diferentes hábitos que le permitirán ejercitar y mantener sus ojos en buen estado.";
-
-
+                opc = 1;
             }
             if (sumResp > lim2 && sumResp <= lim4)
             {
                 richTextBox1.Text = "De acuerdo a las respuestas que ha proporcionado, se concluye que su vista se encuentra en buen estado, sin embargo pueden existir algunos factores que puede mejorar para evitar futuros problemas en su salud ocular. Se le invita a ingresar a los módulos de nuevos hábitos y de suplementos para conocer recomendaciones que le pueden ayudar a mantener una vista sana";
+                opc = 2;
             }
             if (sumResp > lim4 && sumResp <= lim6)
             {
                 richTextBox1.Text = "De acuerdo a las respuestas que ha proporcionado, su salud ocular puede estar en riesgo de padecer algunos problemas de salud si no son atendidos en el futuro, por lo que se le recomienda realizar los diferentes ejercicios que podrá encontrar en cada módulo dentro de la sección de ejercicios.";
+                opc = 3;
             }
             if (sumResp > lim6)
             {
                 richTextBox1.Text = "De acuerdo a las respuestas que ha proporcionado se le recomienda realizar la terapia completa, siguiendo las instrucciones de cada uno de los módulos y leyendo las indicaciones para adoptar hábitos nuevos que podrán facilitar el mejoramiento y recuperación de su salud ocular. Además de la realización de las pruebas se recomienda acudir a un centro de salud para recibir asistencia más especializada y efectiva. Mucho éxito en su progreso!";
+                opc = 4;
             }
+
+
+            databaseobject.OpenConnection();
+            DTNow = databaseobject.GetDateTime();
+            string CommandText = "SELECT * FROM Cuestionario_Final WHERE ID_Usuario= @IDUser";
+            SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+            mycommand.Parameters.AddWithValue("@IDUser", aux);
+            SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
+            if (sqReader.Read()) //mientras se lean los datos
+            {
+                sqReader.Close();
+                string queryupdate = "UPDATE Cuestionario_Final set Fecha_Hora = @Date, Diagnostico = @Text WHERE ID_Usuario = @IDU";
+                SQLiteCommand myupcommand = new SQLiteCommand(queryupdate, databaseobject.myConnection);
+                myupcommand.Parameters.AddWithValue("@Date",DTNow);
+                myupcommand.Parameters.AddWithValue("@Text", Respuesta(opc));
+                myupcommand.Parameters.AddWithValue("@IDU", aux);
+                myupcommand.ExecuteNonQuery();
+                databaseobject.CloseConnection();
+            }
+
+            else
+            {
+                sqReader.Close();
+
+                string query = "INSERT INTO Cuestionario_Final ('ID_Usuario', 'Fecha_Hora', 'Diagnostico') VALUES (@IDUS, @Timestamp, @Diag)";
+                SQLiteCommand myscommand = new SQLiteCommand(query, databaseobject.myConnection);
+
+                myscommand.Parameters.AddWithValue("@IDUS", aux);
+                myscommand.Parameters.AddWithValue("@TimeStamp", DTNow);
+                myscommand.Parameters.AddWithValue("@Diag", Respuesta(opc));
+
+                myscommand.ExecuteNonQuery();
+                databaseobject.CloseConnection();
+            }
+
+
+
             richTextBox1.Visible = true;
             double avance = (double)sumResp / (double)lim7 * 100.0;
 
             button1.Visible = true;
             label1.Visible = true;
 
+        }
+
+        private string Respuesta(int opc)
+        {
+            if (opc == 1)
+            {
+                resp = "Sus hábitos y salud ocular son adecuados, por lo que probablemente no tenga complicaciones visuales.Sin embargo las pruebas están a su disposición si así lo desea. Igualmente puede acceder al resto de los módulos para conocer diferentes hábitos que le permitirán ejercitar y mantener sus ojos en buen estado.";
+            }
+            if (opc == 2)
+            {
+                resp = "Su vista se encuentra en buen estado, sin embargo pueden existir algunos factores que puede mejorar para evitar futuros problemas en su salud ocular. Se le invita a ingresar a los módulos de nuevos hábitos y de suplementos para conocer recomendaciones que le pueden ayudar a mantener una vista sana";
+            }
+            if (opc == 3)
+            {
+                resp = "Su salud ocular puede estar en riesgo de padecer algunos problemas de salud si no son atendidos en el futuro, por lo que se le recomienda realizar los diferentes ejercicios que podrá encontrar en cada módulo dentro de la sección de ejercicios.";
+            }
+            if (opc == 4)
+            {
+                resp = "Se le recomienda realizar la terapia completa, siguiendo las instrucciones de cada uno de los módulos y leyendo las indicaciones para adoptar hábitos nuevos que podrán facilitar el mejoramiento y recuperación de su salud ocular. Además de la realización de las pruebas se recomienda acudir a un centro de salud para recibir asistencia más especializada y efectiva. Mucho éxito en su progreso!";
+            }
+            return resp;
         }
     }
 }

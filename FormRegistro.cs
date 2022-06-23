@@ -27,13 +27,15 @@ namespace Therapheye
             if (textBox1.Text != string.Empty || textBox2.Text != string.Empty || textBox3.Text != string.Empty || textBox4.Text != string.Empty || textBox5.Text != string.Empty)
             {
                 databaseobject.OpenConnection();
-                string CommandText = "SELECT * FROM Usuario WHERE Nombre='" + textBox1.Text + "'";
+                //string CommandText = "SELECT * FROM Usuario WHERE Nombre='" + textBox1.Text + "'";
+                string CommandText = "SELECT * FROM Usuario WHERE Nombre= @NombreU";
                 SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+                mycommand.Parameters.AddWithValue("@NombreU", textBox1.Text);
                 SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
                 if (sqReader.Read()) //mientras se lean los datos
                 {
                     sqReader.Close();
-                    MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Este usuario ya existe, intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 else

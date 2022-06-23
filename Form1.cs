@@ -252,10 +252,11 @@ namespace Therapheye
         public void ValidarCuestionario()
         {
             databaseobject.OpenConnection(); //se abre una conexion a la base de datos
-            string CommandText = "SELECT * FROM Cuestionario_Inicial WHERE ID_Usuario='" + aux + "'";
+            string CommandText = "SELECT * FROM Cuestionario_Inicial WHERE ID_Usuario= @IDUSer";
 
             //se ejecuta la consulta anterior
             SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+            mycommand.Parameters.AddWithValue("@IDUser", aux);
             SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
 
             if (sqReader.Read()) //mientras se lean los datos
