@@ -127,15 +127,18 @@ namespace Therapheye
             panel2.Visible = true;
 
             databaseobject.OpenConnection(); //se abre una conexion a la base de datos
-            string CommandText = "SELECT * FROM Cuestionario_Inicial WHERE ID_Usuario='" + aux + "'";
+            string CommandText = "SELECT * FROM Cuestionario_Inicial WHERE ID_Usuario= @ID";
 
             //se ejecuta la consulta anterior
             SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+            mycommand.Parameters.AddWithValue("@ID", aux);
             SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
 
             if (sqReader.Read()) //mientras se lean los datos
             {
                 //si se encuentra un usuario existente, se asiga el valor de su id a la variable
+
+
                 label1.Text = sqReader["Diagnostico"].ToString();
                 label2.Text = sqReader["Fecha_Hora"].ToString();
             }
@@ -144,7 +147,82 @@ namespace Therapheye
             {
                 sqReader.Close();
             }
+
+            databaseobject.OpenConnection(); //se abre una conexion a la base de datos
+            string CommandTextFinal = "SELECT * FROM Cuestionario_Final WHERE ID_Usuario= @ID";
+
+            //se ejecuta la consulta anterior
+            SQLiteCommand mycommandf = new SQLiteCommand(CommandTextFinal, databaseobject.myConnection);
+            mycommandf.Parameters.AddWithValue("@ID", aux);
+            SQLiteDataReader sqReaderf = mycommandf.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
+
+            if (sqReaderf.Read()) //mientras se lean los datos
+            {
+                //si se encuentra un usuario existente, se asiga el valor de su id a la variable
+                label4.Text = sqReaderf["Diagnostico"].ToString();
+                label3.Text = sqReaderf["Fecha_Hora"].ToString();
+            }
+
+            else
+            {
+                label4.Text = "No se ha realizado el test final";
+                label3.Text = "Sin fecha disponible";
+                sqReaderf.Close();
+            }
+
+            string CommandTextUserD = "SELECT * FROM Usuario WHERE ID= @ID";
+
+            //se ejecuta la consulta anterior
+            SQLiteCommand mycommandUser = new SQLiteCommand(CommandTextUserD, databaseobject.myConnection);
+            mycommandUser.Parameters.AddWithValue("@ID", aux);
+            SQLiteDataReader sqReaderUser = mycommandUser.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
+
+            if (sqReaderUser.Read()) //mientras se lean los datos
+            {
+                //si se encuentra un usuario existente, se asiga el valor de su id a la variable
+                textBox1.Text = sqReaderUser["Nombre"].ToString();
+                textBox2.Text = sqReaderUser["Direccion"].ToString();
+                textBox3.Text = sqReaderUser["Telefono"].ToString();
+                textBox4.Text = sqReaderUser["Correo"].ToString();
+                textBox5.Text = sqReaderUser["Password"].ToString();
+            }
+
+            else
+            {
+                sqReaderUser.Close();
+            }
+
             databaseobject.CloseConnection();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            databaseobject.OpenConnection(); //se abre una conexion a la base de datos
+            string CommandText = "SELECT * FROM Usuario WHERE ID= @ID";
+            SQLiteCommand mycommandGet = new SQLiteCommand(CommandText, databaseobject.myConnection);
+            mycommandGet.Parameters.AddWithValue("@ID", aux);
+            SQLiteDataReader sqReaderUP = mycommandGet.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
+            if (sqReaderUP.Read()) //mientras se lean los datos
+            {
+                sqReaderUP.Close();
+                string queryupdate = "UPDATE Usuario set Nombre = @Name, Direccion = @Direc, Telefono = @Tel, Correo = @Mail, Password = @Pass WHERE ID = @IDU";
+                SQLiteCommand myupcommand = new SQLiteCommand(queryupdate, databaseobject.myConnection);
+
+                myupcommand.Parameters.AddWithValue("@IDU", aux);
+                myupcommand.Parameters.AddWithValue("@Name", textBox1.Text);
+                myupcommand.Parameters.AddWithValue("@Direc", textBox2.Text);
+                myupcommand.Parameters.AddWithValue("@Tel", textBox3.Text);
+                myupcommand.Parameters.AddWithValue("@Mail", textBox4.Text);
+                myupcommand.Parameters.AddWithValue("@Pass", textBox5.Text);
+                myupcommand.ExecuteNonQuery();
+                databaseobject.CloseConnection();
+            }
+
+            else
+            {
+                sqReaderUP.Close();
+                databaseobject.CloseConnection();
+            }
         }
 
         public void MostrarPanel()
@@ -195,6 +273,38 @@ namespace Therapheye
 
             SetColumnProperties();
             databaseobject.CloseConnection();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MostrarPanel();
+            //mueve el sidepanel para especificar que boton esta seleccionado
+            SidePanel.Height = button10.Height;
+            SidePanel.Top = button10.Top;
+
+            databaseobject.OpenConnection(); //se abre la conexion a la base de datos
+            string CommandText = "SELECT Tipo_Ejercicio, Fecha_Hora, Cambio, Nota FROM Ejercicio_Integridad_Ocular WHERE Id_Usuario='" + aux + "'";
+            SQLiteDataAdapter sqlda = new SQLiteDataAdapter(CommandText, databaseobject.myConnection);
+            DataTable dt;
+
+            using (dt = new DataTable())
+            {
+                sqlda.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+
+            SetColumnProperties();
+            databaseobject.CloseConnection();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

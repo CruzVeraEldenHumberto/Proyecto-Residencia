@@ -37,10 +37,12 @@ namespace Therapheye
             if (textBox1.Text != string.Empty || textBox2.Text != string.Empty) //si ambos campos no son nulos
             {
                 //se hace una consulta select para buscar el usuario con los datos ingresados
-                string CommandText = "SELECT * FROM Usuario WHERE Nombre='" + textBox1.Text + "' AND Password='" + textBox2.Text + "'";
+                string CommandText = "SELECT * FROM Usuario WHERE Nombre= @Name AND Password= @Password";
 
                 //se ejecuta la consulta anterior
                 SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+                mycommand.Parameters.AddWithValue("@Name", textBox1.Text);
+                mycommand.Parameters.AddWithValue("@Password", textBox2.Text);
                 SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
 
                 if(sqReader.Read()) //mientras se lean los datos

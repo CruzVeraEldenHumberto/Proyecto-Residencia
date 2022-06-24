@@ -293,20 +293,51 @@ namespace Therapheye
                 opc = 4;
             }
 
-            string query = "INSERT INTO Cuestionario_Inicial ('ID_Usuario', Fecha_Hora, 'Diagnostico') VALUES (@IDU, @Timestamp, @Diagnosis)";
-            SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
-
             databaseobject.OpenConnection();
 
             DTNow = databaseobject.GetDateTime();
 
-            mycommand.Parameters.AddWithValue("@IDU", idVal);
-            mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
-            mycommand.Parameters.AddWithValue("@Diagnosis", Respuesta(opc));
+            string CommandText = "SELECT * FROM Cuestionario_Inicial WHERE ID_Usuario= @IDUser";
+            SQLiteCommand mycommand = new SQLiteCommand(CommandText, databaseobject.myConnection);
+            mycommand.Parameters.AddWithValue("@IDUser", idVal);
+            SQLiteDataReader sqReader = mycommand.ExecuteReader(); // se crea un objetoSQLiteDataReader para leer los datos de la tabla
+            if (sqReader.Read()) //mientras se lean los datos
+            {
+                sqReader.Close();
+                string queryupdate = "UPDATE Cuestionario_Inicial set Fecha_Hora = @Date, Diagnostico = @Text WHERE ID_Usuario = @IDU";
+                SQLiteCommand myupcommand = new SQLiteCommand(queryupdate, databaseobject.myConnection);
+                myupcommand.Parameters.AddWithValue("@Date", DTNow);
+                myupcommand.Parameters.AddWithValue("@Text", Respuesta(opc));
+                myupcommand.Parameters.AddWithValue("@IDU", idVal);
+                myupcommand.ExecuteNonQuery();
+                databaseobject.CloseConnection();
+            }
 
-            mycommand.ExecuteNonQuery();
+            else
+            {
+                sqReader.Close();
 
-            databaseobject.CloseConnection();
+                string query = "INSERT INTO Cuestionario_Inicial ('ID_Usuario', 'Fecha_Hora', 'Diagnostico') VALUES (@IDUS, @Timestamp, @Diag)";
+                SQLiteCommand myscommand = new SQLiteCommand(query, databaseobject.myConnection);
+
+                myscommand.Parameters.AddWithValue("@IDUS", idVal);
+                myscommand.Parameters.AddWithValue("@TimeStamp", DTNow);
+                myscommand.Parameters.AddWithValue("@Diag", Respuesta(opc));
+
+                myscommand.ExecuteNonQuery();
+                databaseobject.CloseConnection();
+            }
+
+            //string query = "INSERT INTO Cuestionario_Inicial ('ID_Usuario', Fecha_Hora, 'Diagnostico') VALUES (@IDU, @Timestamp, @Diagnosis)";
+            //SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
+
+            //mycommand.Parameters.AddWithValue("@IDU", idVal);
+            //mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
+            //mycommand.Parameters.AddWithValue("@Diagnosis", Respuesta(opc));
+
+            //mycommand.ExecuteNonQuery();
+
+            //databaseobject.CloseConnection();
 
             Inicio ini = this.ParentForm as Inicio;
             if (ini != null)
