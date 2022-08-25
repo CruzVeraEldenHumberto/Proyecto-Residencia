@@ -508,6 +508,8 @@
     <None Include="Resources\pinguino.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user_white.png" />
+    <None Include="Resources\user.png" />
     <None Include="Resources\presionCuenca.jpg" />
     <None Include="Resources\presionMano.jpg" />
     <None Include="Resources\Zn.png" />
