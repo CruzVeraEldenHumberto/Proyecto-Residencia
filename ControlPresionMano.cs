@@ -16,7 +16,6 @@ namespace Therapheye
 {
     public partial class ControlPresionMano : UserControl
     {
-
         Stopwatch reloj = new Stopwatch();
         string tiempo;
         public int IDUser; //id del usuario
@@ -105,9 +104,7 @@ namespace Therapheye
             mycommand.Parameters.AddWithValue("@TiempoE", tiempo);
             mycommand.Parameters.AddWithValue("@Cambio", cambio);
             mycommand.Parameters.AddWithValue("@Nota", Nota);
-
             mycommand.ExecuteNonQuery();
-
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -135,7 +135,7 @@ namespace Therapheye
             }
             if (ContCorrecta > 1 && ContCorrecta <4)
             {
-                MessageBox.Show("Existe la posibilidad de que tenga una moderada de perdida de contraste en su vista. " + Resultado, "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Existe la posibilidad de que tenga una moderada perdida de contraste en su vista. " + Resultado, "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Nota = "Moderada deficiencia";
             }
             if (ContCorrecta > 3 && ContCorrecta < 6)

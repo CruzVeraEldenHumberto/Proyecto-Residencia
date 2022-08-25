@@ -328,17 +328,6 @@ namespace Therapheye
                 databaseobject.CloseConnection();
             }
 
-            //string query = "INSERT INTO Cuestionario_Inicial ('ID_Usuario', Fecha_Hora, 'Diagnostico') VALUES (@IDU, @Timestamp, @Diagnosis)";
-            //SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
-
-            //mycommand.Parameters.AddWithValue("@IDU", idVal);
-            //mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
-            //mycommand.Parameters.AddWithValue("@Diagnosis", Respuesta(opc));
-
-            //mycommand.ExecuteNonQuery();
-
-            //databaseobject.CloseConnection();
-
             Inicio ini = this.ParentForm as Inicio;
             if (ini != null)
             {

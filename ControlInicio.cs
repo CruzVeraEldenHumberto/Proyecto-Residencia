@@ -61,7 +61,7 @@ namespace Therapheye
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Investigación y Desarrollo: Cortes Chavarín Merari Livannette 17210548 y González Sepúlveda Genaro Eugenio 16212017 ", "Contacto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Investigación y Desarrollo: Cruz Vera Elden Humberto 17211512 y Portillo Lara Issui 14210422. \nContinuación del proyecto elaborado por Cortes Chavarín Merari Livannette 17210548 y González Sepúlveda Genaro Eugenio 16212017", "Contacto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

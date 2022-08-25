@@ -13,14 +13,6 @@ namespace Therapheye
 {
     public partial class ControlIshihara : UserControl
     {
-        //public string Resp1;
-        //public string Resp2;
-        //public string Resp3;
-        //public string Resp4;
-        //public string Resp5;
-        //public string Resp6;
-        //public string Resp7;
-        //public string Resp8;
         public string DTNow;
         public string Nota;
         public int IDUser; //id del usuario
@@ -411,30 +403,6 @@ namespace Therapheye
 
             databaseobject.CloseConnection(); //cierra la conexión de la base de datos
         }
-
-        //public void InsertRespuestas()
-        //{
-        //    IDUser = DBValue.valID;
-
-        //    string query = "INSERT INTO Ejercicio_Vision_Color ('Id_Usuario', 'Fecha_Hora', 'Primer_Respuesta', 'Segunda_Respuesta', 'Tercer_Respuesta', 'Cuarta_Respuesta', 'Quinta_Respuesta', 'Sexta_Respuesta') VALUES (@IDU, @Timestamp, @R1, @R2, @R3, @R4, @R5, @R6)";
-        //    SQLiteCommand mycommand = new SQLiteCommand(query, databaseobject.myConnection);
-
-        //    databaseobject.OpenConnection();
-
-        //    DTNow = databaseobject.GetDateTime();
-
-        //    mycommand.Parameters.AddWithValue("@IDU", IDUser);
-        //    mycommand.Parameters.AddWithValue("@Timestamp", DTNow);
-        //    mycommand.Parameters.AddWithValue("@R1", Resp1);
-        //    mycommand.Parameters.AddWithValue("@R2", Resp2);
-        //    mycommand.Parameters.AddWithValue("@R3", Resp3);
-        //    mycommand.Parameters.AddWithValue("@R4", Resp4);
-        //    mycommand.Parameters.AddWithValue("@R5", Resp5);
-        //    mycommand.Parameters.AddWithValue("@R6", Resp6);
-
-        //    mycommand.ExecuteNonQuery();
-        //}
-
         public void Correct()
         {
             ContCorrecta = ContCorrecta + 1;
@@ -444,17 +412,5 @@ namespace Therapheye
         {
             ContIncorrecto = ContIncorrecto + 1;
         }
-
-
-
-        //public string Correct()
-        //{
-        //    return "Correcta";
-        //}
-
-        //public string Incorrect()
-        //{
-        //    return "Incorrecta";
-        //}
     }
 }
